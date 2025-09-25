@@ -8,12 +8,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          sudo apt-get update
-          sudo apt-get -y install typst
-          typst compile main.typ --input lang=en cv_en.pdf
-          typst compile main.typ --input lang=fr cv_fr.pdf
+          wget https://github.com/typst/typst/releases/download/v0.13.1/typst-x86_64-unknown-linux-musl.tar.xz
+          tar -xvf typst-x86_64-unknown-linux-musl.tar.xz
+          ./typst-x86_64-unknown-linux-musl/typst compile main.typ --input lang=en cv_en.pdf
+          ./typst-x86_64-unknown-linux-musl/typst compile main.typ --input lang=fr cv_fr.pdf
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add .
+          git add cv_en.pdf cv_fr.pdf
           git commit -m "generated"
           git push
