@@ -1,5 +1,5 @@
 #import "@preview/basic-resume:0.2.8": *
-#let lang = "fr"
+#let lang = if "lang" in sys.inputs { sys.inputs.lang } else { "fr" }
 #let fren(fr, en) = if lang == "fr" { fr } else { en }
 
 #let name = "Aleksei Kotliarov"
@@ -9,6 +9,8 @@
 #let linkedin = "linkedin.com/in/al-kot"
 #let phone = "+33 6 18 20 43 42"
 #let personal-site = "stuxf.dev"
+
+#set block(spacing: if lang == "fr" { 0.7em } else { 1.3em })
 
 #show: resume.with(
   author: name,
@@ -42,21 +44,14 @@
 )
 #fren(
   [
-    - Majeur: SCIA --- IA & Data Science
+    - Section anglophone
 
-    - Matières pertinents : Probabilités et Statistiques, Optimisation Convexe,
-      Natural Language Processing, Data Engineering, Fondamentaux de
-      l’apprentissage automatique, Réseaux de Neurones,
-      ML-based Image/Video Compression, GPGPU, Generative AI & Diffusion
-      Models
+    - Majeur: SCIA --- IA & Data Science
   ],
   [
-    - Major: SCIA --- AI & Data Science
+    - English-speaking section
 
-    - Relevant Coursework: Probability and Statistics, Convex Optimization,
-      Natural Language Processing, Fundamentals of Machine Learning, Neural
-      Networks, ML-based Image/Video Compression, GPGPU, Generative AI &
-      Diffusion Models
+    - Major: SCIA --- AI & Data Science
   ],
 )
 
@@ -91,19 +86,24 @@
   ),
   location: "Le Kremlin-Bicêtre, France",
   company: "EPITA",
-  dates: dates-helper(start-date: "Sept 2025", end-date: "Present"),
+  dates: dates-helper(start-date: "Sept 2025", end-date: "Jan 2026"),
 )
 #fren(
   [
-    - Enseigné aux étudiants de première année en école d’ingénieurs les fondamentaux de la programmation en C, Python et SQL
+    - Enseigné aux étudiants de première année en école d’ingénieurs les
+      fondamentaux de la programmation en C, Python et SQL
 
-    - Participé à la validation des exercices et projets
+    - Encadré 400 étudiants pendant les travaux dirigés et permanences
+
+    - Participé au maintient et aux crashtests des exercices et projets
   ],
   [
     - Taught first year engineering students the fundamentals of programming with
-      C, Python and SQL.
+      C, Python and SQL
 
-    - Participated in crash tests of the exercises and projects.
+    - Supervised 400 students during tutorials and permanences
+
+    - Contributed to the maintenance and crashtests of exercises and projects
   ],
 )
 
@@ -149,13 +149,16 @@
 )
 #fren(
   [
+    - Extension open source pour Neovim permettant l’aperçu en temps réel de
+      documents Typst
+
+    - Rendu d’images directement dans un terminal
   ],
   [
     - Open-source Neovim extension that enables real-time preview of Typst
       documents
 
-    - Continuous compilation and display of images directly inside the terminal
-      via Kitty graphics protocol
+    - Image rendering directly inside a terminal
   ],
 )
 
@@ -193,7 +196,7 @@
     - Un réseau de neurones convolutifs pour la classification d’images de
       différents types de navires
 
-      - Un modèle de segmentation client afin d’identifier les profils
+    - Un modèle de segmentation client afin d’identifier les profils
       bancaires et d’évaluer les risques potentiels basé sur le comportement
       financiers
   ],
@@ -209,10 +212,12 @@
   ],
 )
 
-== #fren([Compétences],[Skills])
+== #fren([Compétences], [Skills])
 - *#fren([Langages de Programmation], [Programming Languages])*: Python, C/C++,
   Lua, Go, JS/TS, HTML/CSS, Java, Bash, R, Apex, Rust
+
 - *Technologies*: Git, Tensorflow, Keras, Torch, Docker, Kubernetes, NextJs, GitHub/GitLab CI/CD, SalesForce
+
 #fren(
   [
     - *Langues*: Français, Anglais (TOEIC 980), Russe

@@ -1,0 +1,19 @@
+name: Compile CV
+on: push
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+        sudo apt-get update
+        sudo apt-get -y install typst
+        typst compile main.typ --input lang=en cv_en.pdf
+        typst compile main.typ --input lang=fr cv_fr.pdf
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add .
+        git commit -m "generated"
+        git push
