@@ -24,15 +24,15 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: cv_en.pdf
           asset_name: CV_KOTLIROV_EN.pdf
-          tag: "English version"
+          tag: English
           overwrite: true
-          body: ""
+          body: "English version"
       - name: Release french
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: cv_fr.pdf
           asset_name: CV_KOTLIROV_FR.pdf
-          tag: "Version française"
+          tag: Français
           overwrite: true
-          body: ""
+          body: "Version française"

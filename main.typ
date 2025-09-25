@@ -7,7 +7,7 @@
 #let email = "alekseikotliarov@gmail.com"
 #let github = "github.com/al-kot"
 #let linkedin = "linkedin.com/in/al-kot"
-#let phone = "06 18 20 43 42"
+#let phone = "+33 6 18 20 43 42"
 
 #set block(spacing: if lang == "fr" { 0.7em } else { 1.3em })
 
@@ -18,7 +18,6 @@
   github: github,
   linkedin: linkedin,
   phone: phone,
-  // personal-site: personal-site,
   accent-color: "#26428b",
   font: "New Computer Modern",
   paper: "us-letter",
