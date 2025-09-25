@@ -6,14 +6,34 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Compile
       - uses: actions/checkout@v3
       - run: |
           wget https://github.com/typst/typst/releases/download/v0.13.1/typst-x86_64-unknown-linux-musl.tar.xz
           tar -xvf typst-x86_64-unknown-linux-musl.tar.xz
           ./typst-x86_64-unknown-linux-musl/typst compile main.typ --input lang=en cv_en.pdf
           ./typst-x86_64-unknown-linux-musl/typst compile main.typ --input lang=fr cv_fr.pdf
+          ./typst-x86_64-unknown-linux-musl/typst compile main.typ -f png --input lang=en cv_en.png
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add cv_en.pdf cv_fr.pdf
+          git add cv_en.png
           git commit -m "generated"
           git push
+      - name: Release english
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: cv_en.pdf
+          asset_name: CV_KOTLIROV_EN.pdf
+          tag: cv_en
+          overwrite: true
+          body: "English version"
+      - name: Release french
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: cv_fr.pdf
+          asset_name: CV_KOTLIROV_FR.pdf
+          tag: cv_fr
+          overwrite: true
+          body: "Version française"
