@@ -9,7 +9,7 @@
 #let linkedin = "linkedin.com/in/al-kot"
 #let phone = "+33 6 18 20 43 42"
 
-#set block(spacing: if lang == "fr" { 0.7em } else { 1.3em })
+#set block(spacing: if lang == "fr" { 0.65em } else { 1.4em })
 
 #show: resume.with(
   author: name,
@@ -43,12 +43,10 @@
 #fren(
   [
     - Section anglophone
-
     - Majeur: SCIA --- IA & Data Science
   ],
   [
     - English-speaking section
-
     - Major: SCIA --- AI & Data Science
   ],
 )
@@ -91,7 +89,7 @@
     - Enseigné aux étudiants de première année en école d’ingénieurs les
       fondamentaux de la programmation en C, Python et SQL
 
-    - Encadré 400 étudiants pendant les travaux dirigés et permanences
+    - Encadré 600 étudiants pendant les travaux dirigés et permanences
 
     - Participé au maintient et aux crashtests des exercices et projets
   ],
@@ -99,7 +97,7 @@
     - Taught first year engineering students the fundamentals of programming with
       C, Python and SQL
 
-    - Supervised 400 students during tutorials and permanences
+    - Supervised 600 students during tutorials and permanences
 
     - Contributed to the maintenance and crashtests of exercises and projects
   ],
@@ -197,6 +195,8 @@
     - Un modèle de segmentation client afin d’identifier les profils
       bancaires et d’évaluer les risques potentiels basé sur le comportement
       financiers
+      
+    - Modèle d’optimisation basé sur les contraintes pour maximiser la performance du portefeuille
   ],
   [
     - Personalized short video recommender system using the KuaiRec dataset
@@ -207,6 +207,9 @@
 
     - ML-based segmentation for banking clients to identify customer profiles and
       potential risks based on financial behaviour
+
+    - Constraint-based optimization model to maximize portfolio performance
+      under given constraints
   ],
 )
 
