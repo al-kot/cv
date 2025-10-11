@@ -209,7 +209,6 @@
       potential risks based on financial behaviour
 
     - Constraint-based optimization model to maximize portfolio performance
-      under given constraints
   ],
 )
 
